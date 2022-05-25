@@ -5,10 +5,12 @@ prueba
 
 Desde la consola ejecutar:
 
+2. composer install
+
 3. bin/console doctrine:database:create
 
 4. bin/console doctrine:schema:create
 
 5. bin/console doctrine:fixtures:load
 
-6. symfony server:start -d
+6. bin/console server:start -d
