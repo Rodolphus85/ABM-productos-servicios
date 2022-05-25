@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Edit ProductoServicio{% endblock %}
+
+{% block body %}
+    <h1>Edit ProductoServicio</h1>
+
+    <div class="mb-1">
+    {{ include('producto_servicio/_form.html.twig', {'button_label': 'Update'}) }}
+    </div>
+    
+    <a class="btn btn-info mb-1" href="{{ path('app_producto_servicio_index') }}">back to list</a>
+
+    {{ include('producto_servicio/_delete_form.html.twig') }}
+{% endblock %}

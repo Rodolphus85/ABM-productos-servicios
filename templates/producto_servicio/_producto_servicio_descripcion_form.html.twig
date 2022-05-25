@@ -1,0 +1,5 @@
+{% if producto_servicio.tipo == 'P' %}
+    {{ 'Producto' }}
+{% elseif producto_servicio.tipo == 'S' %}
+    {{ 'Servicio' }}
+{% endif %}

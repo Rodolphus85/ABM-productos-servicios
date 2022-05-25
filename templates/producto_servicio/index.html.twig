@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}ProductoServicio index{% endblock %}
+
+{% block body %}
+    <h1>ProductoServicio index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipo</th>
+                <th>Codigo</th>
+                <th>ProductoServicio</th>
+                <th>PrecioBrutoUnitario</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for producto_servicio in producto_servicios %}
+            <tr>
+                <td>{{ producto_servicio.id }}</td>
+                <td>{{ include('producto_servicio/_producto_servicio_descripcion_form.html.twig') }}</td>
+                <td>{{ producto_servicio.codigo }}</td>
+                <td>{{ producto_servicio.productoServicio }}</td>
+                <td>{{ producto_servicio.precioBrutoUnitario }}</td>
+                <td>
+                    <a class="btn btn-warning" href="{{ path('app_producto_servicio_show', {'id': producto_servicio.id}) }}">show</a>
+                    <a class="btn btn-primary" href="{{ path('app_producto_servicio_edit', {'id': producto_servicio.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="6">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a class="btn btn-primary" href="{{ path('app_producto_servicio_new') }}">Create new</a>
+{% endblock %}
